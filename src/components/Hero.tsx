@@ -3,6 +3,7 @@
 import React from 'react';
 import { ArrowRight, Play, Sparkles, Video, Layers, BrainCircuit } from 'lucide-react';
 import HeroVideo from './HeroVideo';
+import HeroProductShowcase from './HeroProductShowcase';
 
 export default function Hero() {
   const scrollTo = (id: string) => {
@@ -15,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#08090C]"
+      className="relative min-h-screen flex items-center justify-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#08090C]"
     >
       {/* Background Video with Dark Gradient Overlay & Static Poster Fallback */}
       <HeroVideo
@@ -23,7 +24,7 @@ export default function Hero() {
         videoUrl="https://assets.mixkit.co/videos/preview/mixkit-abstract-fast-flowing-lines-and-light-particles-40812-large.mp4"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-6xl mx-auto text-center flex flex-col items-center w-full">
         {/* Top Announcement Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-amber-500/30 backdrop-blur-md mb-8 hover:border-amber-400/50 transition-colors">
           <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
@@ -67,8 +68,11 @@ export default function Hero() {
           </button>
         </div>
 
+        {/* Two-Product Client Video Showcase */}
+        <HeroProductShowcase />
+
         {/* Proof / Value Metrics Bar */}
-        <div className="mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 pt-8 border-t border-white/10 w-full max-w-3xl">
+        <div className="mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 pt-8 border-t border-white/10 w-full max-w-4xl">
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-1.5 text-amber-400 font-bold text-2xl sm:text-3xl">
               <Video className="w-5 h-5 text-amber-400" />
@@ -97,4 +101,3 @@ export default function Hero() {
     </section>
   );
 }
-
